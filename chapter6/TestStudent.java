@@ -8,25 +8,25 @@ package chapter6;
  * toString() 함수 구현과 사용
  * 객체 배열 사용
  */
-class Student {
+class Student1 {
 	static int countStudents;// 객체수
 	int sid;// 학번
 	String name; // 학생 이름
 	String city; // 주소 도시
 
-	public Student() {
+	public Student1() {
 		this(0);
 	}
 
-	public Student(int sid) {
+	public Student1(int sid) {
 		this(sid, null);
 	}
 
-	public Student(int sid, String name) {
+	public Student1(int sid, String name) {
 		this(sid, name, null);
 	}
 
-	public Student(int sid, String name, String city) {
+	public Student1(int sid, String name, String city) {
 		this.sid = sid;
 		this.name = name;
 		this.city = city;

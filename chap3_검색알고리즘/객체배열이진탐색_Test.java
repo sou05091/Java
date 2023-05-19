@@ -58,12 +58,12 @@ public class 객체배열이진탐색_Test {
 		sortData(data);
 		showData(data);
 		
-//		PhyscData1 key = new PhyscData1("길동", 167, 0.2);
-//		int result = linearSearch(data, key);
-//		System.out.println("\nlinearSearch(): result = " + result);
+		PhyscData1 key = new PhyscData1("길동", 167, 0.2);
+		int result = linearSearch(data, key);
+		System.out.println("\nlinearSearch(): result = " + result);
 		
-		PhyscData1 key = new PhyscData1("길동", 167, 0.5);
-		int result = binarySearch(data, key);
+		key = new PhyscData1("길동", 167, 0.5);
+		result = binarySearch(data, key);
 		System.out.println("\nbinarySearch(): result = " + result);
 		int idx = Arrays.binarySearch(data, key);
 		System.out.println("\nArrays.binarySearch(): result = " + result);
@@ -78,7 +78,11 @@ public class 객체배열이진탐색_Test {
 			int pc = (pl+pr) / 2;
 			if(data[pc].getName().compareTo(key.getName()) == 0 && data[pc].getHeight() == key.getHeight() && data[pc].getVision() == key.getVision())
 			return pc;
-			else if (data[pc].getName().compareTo(key.getName()) < 0 || data[pc].getHeight() != key.getHeight() || data[pc].getVision() != key.getVision())
+			else if (data[pc].getName().compareTo(key.getName()) < 0)
+				pl = pc + 1;
+			else if (data[pc].getName().compareTo(key.getName()) == 0 && data[pc].getHeight() != key.getHeight())
+				pl = pc + 1;
+			else if (data[pc].getName().compareTo(key.getName()) == 0 && data[pc].getHeight() == key.getHeight() && data[pc].getVision() != key.getVision())
 				pl = pc + 1;
 			else
 				pr = pc - 1;
